@@ -11,20 +11,18 @@ class LugarList extends StatelessWidget {
       itemCount: lugar == null ? 0 : lugar.length,
       itemBuilder: (BuildContext context, int index) {
         return Card(
-            /* child: Column(
+          /* child: Column(
             children: <Widget>[
               Text(lugar[index].fallecidos.toString()),
               Text(covid[index].recuperados.toString()),
               Text(covid[index].positivos.toString())
             ],*/
-            child: InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => DetailWidget(lugar[index])));
-          },
-        ));
+          child: ListTile(
+            leading: Icon(Icons.person),
+            title: Text(lugar[index].titulo),
+            subtitle: ClipRRect(),
+          ),
+        );
       },
     );
   }
